@@ -438,7 +438,7 @@ const Profile = () => {
               <div className="no-content" style={{
                 backgroundColor: 'var(--bg-card)',
                 padding: '30px',
-                textAlign: 'center',
+                textAlign: 'center', 
                 borderRadius: '8px',
                 transition: 'background-color 0.3s ease'
               }}>
@@ -449,7 +449,7 @@ const Profile = () => {
             )}
           </div>
         )}
-
+        
         {activeTab === 'comments' && (
           <div className="profile-comments">
             {userComments.length > 0 ? (
@@ -543,7 +543,7 @@ const Profile = () => {
           <div className="no-content" style={{
             backgroundColor: 'var(--bg-card)',
             padding: '30px',
-            textAlign: 'center',
+            textAlign: 'center', 
             borderRadius: '8px',
             transition: 'background-color 0.3s ease'
           }}>
