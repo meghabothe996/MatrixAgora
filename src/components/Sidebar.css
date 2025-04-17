@@ -1,0 +1,234 @@
+/* Use CSS variables for colors to support dark mode */
+.sidebar {
+  width: 250px;
+  padding: 20px 0;
+  background-color: var(--bg-card);
+  border-right: 1px solid var(--border-color);
+  height: 100vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 60px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.sidebar-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.sidebar-section-header h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.sidebar-section-content {
+  max-height: 300px;
+  overflow-y: auto;
+  transition: max-height 0.3s ease;
+}
+
+.sidebar-subreddit {
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+  transition: background-color 0.2s;
+}
+
+.sidebar-subreddit:hover {
+  background-color: var(--bg-hover);
+}
+
+.sidebar-subreddit-icon {
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--matrixagora-blue);
+  color: white;
+  font-size: 12px;
+}
+
+.sidebar-subreddit-name {
+  font-size: 14px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  margin-right: 8px;
+  transition: color 0.3s ease;
+}
+
+/* Topic styles */
+.sidebar-topic {
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  position: relative;
+}
+
+.sidebar-topic:hover {
+  background-color: var(--bg-hover);
+}
+
+.topic-dropdown-icon {
+  position: absolute;
+  right: 15px;
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: transform 0.2s, color 0.3s ease;
+}
+
+.topic-subreddits {
+  margin-left: 15px;
+  border-left: 2px solid var(--border-color);
+  padding-left: 10px;
+  animation: fadeIn 0.2s ease-out;
+  transition: border-color 0.3s ease;
+}
+
+.sidebar-subtopic {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  transition: background-color 0.2s;
+  font-size: 13px;
+  position: relative;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.sidebar-subtopic:hover {
+  background-color: var(--bg-hover);
+}
+
+.subtopic-icon {
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.subtopic-members {
+  font-size: 11px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
+  padding-left: 4px;
+  transition: color 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Dropdown animation */
+.sidebar-section-content {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Style scrollbar */
+.sidebar-section-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-section-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-section-content::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  opacity: 0.5;
+  border-radius: 3px;
+}
+
+.sidebar-section-content::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Icons transition when expanding/collapsing */
+.sidebar-section-header i {
+  transition: transform 0.2s;
+  color: var(--text-muted);
+}
+
+.sidebar-section-header:hover i {
+  transform: scale(1.2);
+}
+
+/* Community not found styles */
+.community-not-found {
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  background-color: var(--bg-hover);
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  font-size: 12px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.not-found-title {
+  margin-bottom: 5px;
+}
+
+.community-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.not-found-message {
+  margin-bottom: 4px;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.not-found-submessage {
+  color: var(--text-secondary);
+  font-size: 11px;
+  transition: color 0.3s ease;
+}
+
+.sidebar-resource {
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+  transition: background-color 0.2s;
+}
+
+.sidebar-resource:hover {
+  background-color: var(--bg-hover);
+} 
