@@ -1,103 +1,118 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { users, subreddits } from '../data/dummyData';
+import { subreddits, users } from '../data/dummyData';
+import './PostCard.css';
 
 const PostCard = ({ post }) => {
-  const [voteStatus, setVoteStatus] = useState(0); // 0: not voted, 1: upvoted, -1: downvoted
-  const [voteCount, setVoteCount] = useState(post.upvotes);
+  const [expanded, setExpanded] = useState(false);
   
-  // Find the post author and subreddit
-  const author = users.find(user => user.id === post.userId);
-  const subreddit = subreddits.find(sub => sub.id === post.subredditId);
+  // Find the subreddit and user information
+  const subreddit = subreddits.find(s => s.id === post.subredditId);
+  const user = users.find(u => u.id === post.userId);
   
-  // Format date (e.g., "2 hours ago", "3 days ago")
-  const getTimeAgo = (timestamp) => {
+  // Format the date
+  const formatDate = (dateString) => {
+    const postDate = new Date(dateString);
     const now = new Date();
-    const postDate = new Date(timestamp);
-    const diffInSeconds = Math.floor((now - postDate) / 1000);
+    const diffMs = now - postDate;
+    const diffHrs = diffMs / (1000 * 60 * 60);
     
-    if (diffInSeconds < 60) {
-      return `${diffInSeconds} seconds ago`;
-    } else if (diffInSeconds < 3600) {
-      return `${Math.floor(diffInSeconds / 60)} minutes ago`;
-    } else if (diffInSeconds < 86400) {
-      return `${Math.floor(diffInSeconds / 3600)} hours ago`;
+    if (diffHrs < 1) {
+      return `${Math.round(diffHrs * 60)} minutes ago`;
+    } else if (diffHrs < 24) {
+      return `${Math.round(diffHrs)} hours ago`;
     } else {
-      return `${Math.floor(diffInSeconds / 86400)} days ago`;
+      return `${Math.round(diffHrs / 24)} days ago`;
     }
   };
   
-  // Handle vote clicks
-  const handleVote = (newStatus) => {
-    // If clicking the same button that's already active, reset vote
-    if (newStatus === voteStatus) {
-      setVoteCount(voteCount + (voteStatus * -1));
-      setVoteStatus(0);
+  // Format large numbers
+  const formatNumber = (num) => {
+    if (num >= 1000000) {
+      return `${(num / 1000000).toFixed(1)}m`;
+    } else if (num >= 1000) {
+      return `${(num / 1000).toFixed(1)}k`;
     } else {
-      // If changing vote or voting for first time
-      setVoteCount(voteCount + newStatus - voteStatus);
-      setVoteStatus(newStatus);
+      return num.toString();
     }
   };
   
-  if (!author || !subreddit) return null;
-  
+  // Truncate content for preview
+  const truncateContent = (content) => {
+    const words = content.split(' ');
+    if (words.length > 50 && !expanded) {
+      return words.slice(0, 50).join(' ') + '...';
+    }
+    return content;
+  };
+
   return (
     <div className="post-card">
-      <div className="post-wrapper">
-        <div className="post-votes">
-          <button 
-            className={`vote-button ${voteStatus === 1 ? 'upvoted' : ''}`}
-            onClick={() => handleVote(1)}
-          >
-            ▲
-          </button>
-          <div className="vote-count">{voteCount}</div>
-          <button 
-            className={`vote-button ${voteStatus === -1 ? 'downvoted' : ''}`}
-            onClick={() => handleVote(-1)}
-          >
-            ▼
-          </button>
-        </div>
-        
-        <div className="post-content">
-          <div className="post-header">
-            <Link to={`/r/${subreddit.name.substring(2)}`} className="post-subreddit">
-              {subreddit.name}
+      <div className="post-votes">
+        <button className="vote-button upvote">
+          <i className="fas fa-arrow-up"></i>
+        </button>
+        <span className="vote-count">{formatNumber(post.upvotes)}</span>
+        <button className="vote-button downvote">
+          <i className="fas fa-arrow-down"></i>
+        </button>
+      </div>
+      
+      <div className="post-content">
+        <div className="post-header">
+          {subreddit && (
+            <Link to={`/r/${subreddit.name.substring(2)}`} className="subreddit-link">
+              <span className="subreddit-icon">{subreddit.icon}</span>
+              <span>r/{subreddit.name.substring(2)}</span>
             </Link>
-            <span className="post-author">
-              Posted by <Link to={`/user/${author.username}`}>u/{author.username}</Link>
-            </span>
-            <span>{getTimeAgo(post.created)}</span>
-          </div>
-          
-          <Link to={`/r/${subreddit.name.substring(2)}/comments/${post.id}`}>
-            <h3 className="post-title">{post.title}</h3>
-          </Link>
-          
-          <div className="post-body">{post.content}</div>
-          
-          {post.image && (
-            <img src={post.image} alt={post.title} className="post-image" />
           )}
           
+          <span className="post-info">
+            Posted by{' '}
+            <Link to={`/user/${user?.username}`} className="user-link">
+              u/{user?.username}
+            </Link>{' '}
+            {formatDate(post.created)}
+          </span>
+        </div>
+        
+        <h3 className="post-title">
+          <Link to={`/post/${post.id}`}>{post.title}</Link>
+        </h3>
+        
+        <div className="post-body">
+          <p className="post-text">{truncateContent(post.content)}</p>
+          
+          {post.content.length > 150 && (
+            <button 
+              className="expand-button" 
+              onClick={() => setExpanded(!expanded)}
+            >
+              {expanded ? 'Show less' : 'Read more'}
+            </button>
+          )}
+        </div>
+        
+        <div className="post-footer">
           <div className="post-actions">
-            <div className="post-action">
-              <span>💬</span>
-              <span>{post.comments} Comments</span>
-            </div>
-            <div className="post-action">
-              <span>🔄</span>
+            <button className="action-button">
+              <i className="fas fa-comment-alt"></i>
+              <span>{formatNumber(post.comments)} Comments</span>
+            </button>
+            
+            <button className="action-button">
+              <i className="fas fa-share"></i>
               <span>Share</span>
-            </div>
-            <div className="post-action">
-              <span>⭐</span>
+            </button>
+            
+            <button className="action-button">
+              <i className="fas fa-bookmark"></i>
               <span>Save</span>
-            </div>
-            <div className="post-action">
-              <span>•••</span>
-            </div>
+            </button>
+            
+            <button className="action-button">
+              <i className="fas fa-ellipsis-h"></i>
+            </button>
           </div>
         </div>
       </div>

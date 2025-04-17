@@ -12,8 +12,8 @@ const Popular = () => {
     {
       id: 101,
       title: 'Stunning sunset captured from my balcony last night',
-      content: 'After weeks of rain, finally got this amazing view. No filters used!',
-      image: 'https://picsum.photos/800/600?random=101',
+      content: 'After weeks of rain, finally got this amazing view. No filters used! The sky was a gradient of deep oranges and purples, with clouds that looked like they were on fire. My apartment faces west over the city skyline, and for about 15 minutes everything was bathed in this golden light. I sat there with a cup of tea just taking it all in. It\'s moments like these that make me appreciate living where I do, despite the high rent! Has anyone else caught an amazing sunset recently?',
+      image: '',
       upvotes: 12547,
       userId: 2,
       subredditId: 19, // EarthPorn
@@ -24,8 +24,8 @@ const Popular = () => {
     {
       id: 102,
       title: 'BREAKING: Scientists discover new renewable energy source that could revolutionize power generation',
-      content: 'Researchers at MIT have developed a new method of harvesting energy from ambient temperature fluctuations that could provide clean, constant power with minimal environmental impact.',
-      image: 'https://picsum.photos/800/400?random=102',
+      content: 'Researchers at MIT have developed a new method of harvesting energy from ambient temperature fluctuations that could provide clean, constant power with minimal environmental impact. The system uses specialized nanomaterials that can capture energy from the natural temperature changes that occur throughout the day and night. In lab tests, a prototype the size of a smartphone was able to generate enough electricity to power small devices continuously. The researchers estimate that larger installations could potentially power homes or even contribute to the grid. The technology is still in early stages but shows promise for scaling up within the next decade. The full research paper was published today in Nature Energy.',
+      image: '',
       upvotes: 24891,
       userId: 3,
       subredditId: 17, // futurology
@@ -36,8 +36,8 @@ const Popular = () => {
     {
       id: 103,
       title: 'I built a full gaming PC inside a vintage 1984 Macintosh case',
-      content: 'Took about 3 months to complete. Specs: RTX 3080, i9-11900K, 64GB RAM. The hardest part was fitting the cooling system.',
-      image: 'https://picsum.photos/800/800?random=103',
+      content: 'Took about 3 months to complete. Specs: RTX 3080, i9-11900K, 64GB RAM. The hardest part was fitting the cooling system. I had to completely gut the original internals and create a custom mounting system for the motherboard. The power supply had to be external because there was no way it would fit inside. For cooling, I installed three small Noctua fans and a low-profile CPU cooler. I also added a custom acrylic window on the side so you can see the components, with RGB lighting that maintains the classic beige/brown color scheme. The original power button now works with the new system, and I even managed to incorporate the original floppy drive slot as a secret drawer for USB drives. It runs modern games at 4K without breaking a sweat!',
+      image: '',
       upvotes: 31056,
       userId: 1,
       subredditId: 13, // DIY
@@ -47,9 +47,9 @@ const Popular = () => {
     },
     {
       id: 104,
-      title: 'This AI generated image won first place in an art competition',
-      content: 'Digital artists are debating whether AI-generated artwork should be allowed in traditional art competitions. Thoughts?',
-      image: 'https://picsum.photos/800/500?random=104',
+      title: 'This AI generated artwork won first place in an art competition',
+      content: 'Digital artists are debating whether AI-generated artwork should be allowed in traditional art competitions. Thoughts? The winning piece was a surreal landscape that combined elements of classical painting with modern abstract styles. The artist (if we can call them that) used Midjourney with custom parameters and extensive prompt engineering, followed by manual retouching in Photoshop. The competition judges didn\'t know it was AI-generated until after selecting it as the winner. Many traditional artists are arguing that AI art requires minimal skill and shouldn\'t be judged alongside hand-created work, while others say that prompt engineering and selection is itself a new form of artistic expression. What do you think - should AI art have its own separate category?',
+      image: '',
       upvotes: 18734,
       userId: 5,
       subredditId: 26, // art
@@ -60,8 +60,8 @@ const Popular = () => {
     {
       id: 105,
       title: 'My homemade Neapolitan pizza - after years of practice I finally got it perfect',
-      content: 'The secret was fermenting the dough for 72 hours and using a pizza steel preheated for an hour at max oven temperature.',
-      image: 'https://picsum.photos/800/650?random=105',
+      content: 'The secret was fermenting the dough for 72 hours and using a pizza steel preheated for an hour at max oven temperature. I use a simple recipe of 00 flour, water, salt, and just a tiny bit of yeast to allow for the long fermentation. The dough develops so much flavor during those three days in the fridge. For the sauce, I use only San Marzano tomatoes crushed by hand with a little salt. The cheese is fresh mozzarella that I pat dry before putting on the pizza (prevents soggy centers). I stretch the dough by hand to about 12 inches, keeping the outer edge thicker for a nice puffy cornicione. Total bake time is only about 4-5 minutes at 550°F (as hot as my home oven will go). The bottom gets beautifully leoparded thanks to the pizza steel, and the edge puffs up with those characteristic air pockets. Topped simply with fresh basil added after baking.',
+      image: '',
       upvotes: 9287,
       userId: 4,
       subredditId: 11, // food

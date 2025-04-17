@@ -1660,3 +1660,20 @@ input:checked + .slider:before {
 }
 
 /* End of new right sidebar styles */
+
+.main-content.full-width {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.profile-page {
+  width: 100%;
+}

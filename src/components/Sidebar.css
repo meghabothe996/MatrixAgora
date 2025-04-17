@@ -231,4 +231,11 @@
 
 .sidebar-resource:hover {
   background-color: var(--bg-hover);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
 } 

@@ -3,113 +3,113 @@ import PostCard from '../components/PostCard';
 import { posts, subreddits } from '../data/dummyData';
 
 const All = () => {
-  const [sortBy, setSortBy] = useState('hot'); // 'hot', 'new', 'top', 'controversial'
-  const [view, setView] = useState('card'); // 'card', 'classic', 'compact'
+  const [sortBy, setSortBy] = useState('new'); // 'new', 'top', 'rising'
+  const [timeFilter, setTimeFilter] = useState('all'); // 'today', 'week', 'month', 'year', 'all'
 
-  // Extended dummy posts for the all page - all posts plus some additional ones
+  // Extended dummy popular posts - combining existing posts with some new ones
   const allPosts = [
     ...posts,
     {
       id: 201,
-      title: "What obscure skill have you mastered that's completely useless in everyday life?",
-      content: "I can recite the entire periodic table of elements in under 20 seconds. Hasn't helped me once in real life.",
+      title: 'What\'s your most controversial food opinion?',
+      content: 'I\'ll start: Pineapple absolutely belongs on pizza, and I\'m tired of pretending it doesn\'t. The sweetness of the pineapple perfectly complements the saltiness of the ham and cheese. Plus, the acidity cuts through the richness of the cheese, creating a more balanced flavor profile. I\'ve been a chef for 10 years, and I stand by this combination 100%. What food opinion do you hold that others find controversial? Let\'s keep it civil in the comments!',
       image: '',
-      upvotes: 8721,
+      upvotes: 842,
       userId: 3,
-      subredditId: 6, // AskMatrixAgora
-      comments: 1423,
-      created: '2023-06-17T08:15:00Z',
+      subredditId: 11, // food
+      comments: 763,
+      created: '2023-06-16T22:15:00Z'
     },
     {
       id: 202,
-      title: "The new Tesla Cybertruck spotted in the wild with updated design",
-      content: "Saw this on the highway near Fremont. Looks like they've made several changes to the exterior compared to the original reveal.",
-      image: 'https://picsum.photos/800/450?random=202',
-      upvotes: 15322,
+      title: 'I found a 30-year-old sealed bottle of soda in my grandparents\' basement',
+      content: 'It\'s a limited edition flavor from 1993 that was only sold for a few months. The label is still in perfect condition, though the liquid inside has turned a strange amber color. My grandfather says he bought a case when they announced it was being discontinued. Apparently, he forgot about this last bottle! The flavor was "Tropical Sunset," a mix of passionfruit, mango, and a hint of coconut according to the label. The bottle itself is glass with the original metal cap still secured. There\'s no way I\'m opening it, but it\'s a fascinating piece of beverage history. Has anyone else ever tried this flavor back in the day?',
+      image: '',
+      upvotes: 5731,
       userId: 2,
-      subredditId: 5, // Science
-      comments: 892,
-      created: '2023-06-16T16:40:00Z',
+      subredditId: 5, // mildlyinteresting
+      comments: 341,
+      created: '2023-06-17T14:20:00Z'
     },
     {
       id: 203,
-      title: "TIL that honey never spoils. Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly good to eat.",
-      content: "The combination of low moisture content and high acidity creates an environment where bacteria cannot survive.",
-      image: 'https://picsum.photos/800/500?random=203',
-      upvotes: 42156,
-      userId: 5,
-      subredditId: 24, // todayilearned
-      comments: 734,
-      created: '2023-06-18T11:30:00Z',
+      title: 'TIL that Nintendo was founded in 1889 and originally sold playing cards',
+      content: 'Before video games were even a concept, Nintendo was making handmade playing cards in Kyoto, Japan. They actually started as "Nintendo Koppai," a company that produced handmade hanafuda cards (traditional Japanese playing cards with flower designs). The company was founded by Fusajiro Yamauchi on September 23, 1889. They didn\'t enter the toy market until the 1960s, and their first video game console wasn\'t released until 1977. It\'s incredible to think that a company that\'s now synonymous with video gaming has been around for over 130 years, surviving through two world wars and countless technological revolutions. The company\'s name is thought to roughly translate to "leave luck to heaven" or "the temple of free hanafuda."',
+      image: '',
+      upvotes: 12453,
+      userId: 1,
+      subredditId: 15, // todayilearned
+      comments: 526,
+      created: '2023-06-15T08:45:00Z'
     },
     {
       id: 204,
-      title: "I built a real-time satellite tracker that shows all active satellites above your location",
-      content: "Made with Three.js and NASA's open API. The tracker shows you which satellites are currently passing over your location and provides details like altitude, speed, and purpose.",
-      image: 'https://picsum.photos/800/400?random=204',
-      upvotes: 4892,
-      userId: 1,
-      subredditId: 1, // Programming
-      comments: 347,
-      created: '2023-06-15T14:25:00Z',
+      title: 'After 5 years of struggling with depression, I finally cleaned my apartment',
+      content: 'It might not seem like much to most people, but today I finally managed to clean my entire apartment for the first time in years. Depression had me living in a cluttered, disorganized space that only made my mental state worse. I started small - just taking out the trash. Then I moved to doing the dishes. Before I knew it, I had momentum. I vacuumed every room, organized my closet, scrubbed the bathroom, and even changed my bedsheets. The whole process took almost 8 hours, but now my living space is clean, organized, and peaceful. I feel like I can finally breathe again. If you\'re struggling with something similar, just try to do one small thing. Sometimes that\'s all it takes to start moving forward.',
+      image: '',
+      upvotes: 32578,
+      userId: 5,
+      subredditId: 22, // congratslikeimfive
+      comments: 2431,
+      created: '2023-06-18T19:30:00Z'
     },
     {
       id: 205,
-      title: "The clearest photo of Mars ever taken, released today by NASA",
-      content: "This incredible high-resolution image was captured by the Perseverance rover and shows the Martian landscape in unprecedented detail.",
-      image: 'https://picsum.photos/800/800?random=205',
-      upvotes: 67481,
-      userId: 4,
-      subredditId: 12, // space
-      comments: 1839,
-      created: '2023-06-18T07:50:00Z',
-    },
-    {
-      id: 206,
-      title: "The most underrated tourist destination in your country?",
-      content: "Looking for hidden gems for my next trip. Share the places tourists often miss but locals love!",
+      title: 'Study finds that people who talk to their pets tend to be more empathetic and score higher on emotional intelligence tests',
+      content: 'Researchers at the University of California conducted a study with 450 participants who own pets, measuring their EQ (emotional quotient) and empathy levels. They found that people who regularly talk to their pets as if they were human (known as anthropomorphizing) scored an average of 28% higher on emotional intelligence assessments than those who don\'t. The research suggests this might be because talking to pets serves as a form of emotional practice, helping pet owners become more attuned to non-verbal cues and emotional needs. Additionally, those who reported talking to their pets daily showed higher levels of oxytocin (the "love hormone") when interacting with both animals and humans in controlled experiments. The study controlled for factors such as age, gender, education level, and type of pet owned. The findings were consistent across dog, cat, and even bird owners.',
       image: '',
-      upvotes: 3157,
-      userId: 2,
-      subredditId: 4, // Travel
-      comments: 678,
-      created: '2023-06-14T19:20:00Z',
-    },
-    {
-      id: 207,
-      title: "New study shows dogs can detect early-stage cancer with 97% accuracy",
-      content: "Researchers have trained dogs to detect specific volatile organic compounds that are present in the breath of cancer patients, potentially revolutionizing early detection.",
-      image: 'https://picsum.photos/800/500?random=207',
-      upvotes: 29876,
+      upvotes: 9764,
       userId: 3,
-      subredditId: 5, // Science
-      comments: 542,
-      created: '2023-06-13T10:15:00Z',
+      subredditId: 18, // science
+      comments: 842,
+      created: '2023-06-16T11:05:00Z'
     }
   ];
 
   // Sort posts based on selected sort option
   const getSortedPosts = () => {
+    let sorted = [...allPosts];
+    
+    // First apply time filter
+    if (timeFilter !== 'all') {
+      const now = new Date();
+      let cutoffDate = new Date();
+      
+      switch (timeFilter) {
+        case 'today':
+          cutoffDate.setDate(now.getDate() - 1);
+          break;
+        case 'week':
+          cutoffDate.setDate(now.getDate() - 7);
+          break;
+        case 'month':
+          cutoffDate.setMonth(now.getMonth() - 1);
+          break;
+        case 'year':
+          cutoffDate.setFullYear(now.getFullYear() - 1);
+          break;
+        default:
+          break;
+      }
+      
+      sorted = sorted.filter(post => new Date(post.created) > cutoffDate);
+    }
+    
+    // Then apply sort
     switch (sortBy) {
       case 'new':
-        return [...allPosts].sort((a, b) => new Date(b.created) - new Date(a.created));
+        return sorted.sort((a, b) => new Date(b.created) - new Date(a.created));
       case 'top':
-        return [...allPosts].sort((a, b) => b.upvotes - a.upvotes);
-      case 'controversial':
-        // Controversial posts have high comment counts but mixed upvotes
-        return [...allPosts].sort((a, b) => {
+        return sorted.sort((a, b) => b.upvotes - a.upvotes);
+      case 'rising':
+        return sorted.sort((a, b) => {
+          // Rising combines recency with comment-to-upvote ratio
           const aRatio = a.comments / a.upvotes;
           const bRatio = b.comments / b.upvotes;
           return bRatio - aRatio;
         });
-      case 'hot':
       default:
-        // Hot is a combination of recency and votes
-        return [...allPosts].sort((a, b) => {
-          const aScore = a.upvotes * 0.7 + (1 / (new Date() - new Date(a.created))) * 0.3;
-          const bScore = b.upvotes * 0.7 + (1 / (new Date() - new Date(b.created))) * 0.3;
-          return bScore - aScore;
-        });
+        return sorted.sort((a, b) => new Date(b.created) - new Date(a.created));
     }
   };
   
@@ -122,20 +122,14 @@ const All = () => {
   };
 
   return (
-    <div className="all-page">
+    <div className="all-posts-page">
       <div className="page-header">
         <h1>All Posts</h1>
-        <p>Posts from all communities across MatrixAgora</p>
+        <p>Recent posts from across the Matrix</p>
       </div>
       
       <div className="filter-bar">
         <div className="sorting-tabs">
-          <button 
-            className={`tab-button ${sortBy === 'hot' ? 'active' : ''}`} 
-            onClick={() => setSortBy('hot')}
-          >
-            <i className="fas fa-fire"></i> Hot
-          </button>
           <button 
             className={`tab-button ${sortBy === 'new' ? 'active' : ''}`} 
             onClick={() => setSortBy('new')}
@@ -149,47 +143,35 @@ const All = () => {
             <i className="fas fa-trophy"></i> Top
           </button>
           <button 
-            className={`tab-button ${sortBy === 'controversial' ? 'active' : ''}`} 
-            onClick={() => setSortBy('controversial')}
+            className={`tab-button ${sortBy === 'rising' ? 'active' : ''}`} 
+            onClick={() => setSortBy('rising')}
           >
-            <i className="fas fa-comment-alt"></i> Controversial
+            <i className="fas fa-chart-line"></i> Rising
           </button>
         </div>
         
-        <div className="view-options">
-          <button 
-            className={`view-button ${view === 'card' ? 'active' : ''}`}
-            onClick={() => setView('card')}
-            title="Card View"
-          >
-            <i className="fas fa-th-large"></i>
-          </button>
-          <button 
-            className={`view-button ${view === 'classic' ? 'active' : ''}`}
-            onClick={() => setView('classic')}
-            title="Classic View"
-          >
-            <i className="fas fa-list"></i>
-          </button>
-          <button 
-            className={`view-button ${view === 'compact' ? 'active' : ''}`}
-            onClick={() => setView('compact')}
-            title="Compact View"
-          >
-            <i className="fas fa-align-justify"></i>
-          </button>
+        <div className="time-filter">
+          <select value={timeFilter} onChange={(e) => setTimeFilter(e.target.value)}>
+            <option value="today">Today</option>
+            <option value="week">This Week</option>
+            <option value="month">This Month</option>
+            <option value="year">This Year</option>
+            <option value="all">All Time</option>
+          </select>
         </div>
       </div>
       
-      <div className={`posts-container view-${view}`}>
-        {sortedPosts.map(post => (
-          <div key={post.id} className="all-post-wrapper">
-            <div className="community-tag">
-              {getSubredditName(post.subredditId)}
-            </div>
-            <PostCard post={post} />
+      <div className="posts-container">
+        {sortedPosts.length > 0 ? (
+          sortedPosts.map(post => (
+            <PostCard key={post.id} post={post} />
+          ))
+        ) : (
+          <div className="no-posts">
+            <h3>No posts match your criteria</h3>
+            <p>Try changing your sort or time filter</p>
           </div>
-        ))}
+        )}
       </div>
     </div>
   );

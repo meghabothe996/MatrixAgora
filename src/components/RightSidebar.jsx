@@ -9,24 +9,21 @@ const RightSidebar = () => {
       title: "5 months on 1 project.",
       author: "r/outlier_ai",
       upvotes: 184,
-      comments: 88,
-      image: "https://picsum.photos/60/60?random=1"
+      comments: 88
     },
     {
       id: 2,
       title: "Payment",
       author: "r/alignerr",
       upvotes: 2,
-      comments: 6,
-      image: null
+      comments: 6
     },
     {
       id: 3,
       title: "$10k Milestone!",
       author: "r/alignerr",
       upvotes: 72,
-      comments: 55,
-      image: "https://picsum.photos/60/60?random=3"
+      comments: 55
     }
   ];
 
@@ -56,11 +53,6 @@ const RightSidebar = () => {
                   <span>{post.comments} comments</span>
                 </div>
               </div>
-              {post.image && (
-                <div className="recent-post-image">
-                  <img src={post.image} alt="Post thumbnail" />
-                </div>
-              )}
             </div>
           ))}
         </div>

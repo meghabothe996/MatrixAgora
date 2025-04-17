@@ -633,8 +633,8 @@ export const posts = [
   {
     id: 1,
     title: 'React 19 is about to be released - Here are the new features',
-    content: 'The React team announced that version 19 will be released next month with many exciting new features including improved concurrent mode and server components.',
-    image: 'https://picsum.photos/800/400?random=1',
+    content: 'The React team announced that version 19 will be released next month with many exciting new features including improved concurrent mode and server components. The update introduces a completely revamped reconciliation algorithm that promises up to 30% performance improvements for complex UI rendering. Server components will now have better hydration support and the ability to stream updates more efficiently. The React DevTools are also getting a major overhaul with better debugging capabilities for hooks and state management. What features are you most excited about?',
+    image: '',
     upvotes: 3452,
     userId: 3,
     subredditId: 1,
@@ -644,8 +644,8 @@ export const posts = [
   {
     id: 2,
     title: 'The Shawshank Redemption turns 30 this year',
-    content: 'The classic film The Shawshank Redemption is celebrating its 30th anniversary this year. What are your favorite scenes from this timeless movie?',
-    image: 'https://picsum.photos/800/400?random=2',
+    content: 'The classic film The Shawshank Redemption is celebrating its 30th anniversary this year. What are your favorite scenes from this timeless movie? For me, the rooftop scene where Andy secures beer for his fellow inmates always stands out as a perfect moment of respite and humanity in the harsh prison environment. The final scene with Red and Andy on the beach is obviously iconic as well. The film\'s exploration of hope in the darkest circumstances continues to resonate with audiences three decades later. What makes this film so enduring in your opinion?',
+    image: '',
     upvotes: 2891,
     userId: 4,
     subredditId: 2,
@@ -655,8 +655,8 @@ export const posts = [
   {
     id: 3,
     title: 'My gaming setup after 5 years of upgrades',
-    content: 'Finally completed my dream gaming setup. RTX 4090, i9-13900K, 64GB RAM, and triple monitor setup.',
-    image: 'https://picsum.photos/800/400?random=3',
+    content: 'Finally completed my dream gaming setup. RTX 4090, i9-13900K, 64GB RAM, and triple monitor setup. The main display is a 32" 4K 144Hz panel for immersive gaming, flanked by two 27" 1440p displays in portrait orientation for Discord, browsing, and productivity. All of this is powered by a custom water cooling loop with hardline tubing that keeps temperatures remarkably low even during intense gaming sessions. Cable management was a nightmare but worth it for the clean aesthetic. The desk is a standing desk with programmable height presets, and the chair is an ergonomic model that saves my back during long sessions. What\'s your dream setup look like?',
+    image: '',
     upvotes: 4760,
     userId: 2,
     subredditId: 3,
@@ -666,7 +666,7 @@ export const posts = [
   {
     id: 4,
     title: 'What is your hidden gem travel destination?',
-    content: 'Looking for recommendations for lesser-known but beautiful travel destinations. What places have you visited that aren\'t packed with tourists but are absolutely worth seeing?',
+    content: 'Looking for recommendations for lesser-known but beautiful travel destinations. What places have you visited that aren\'t packed with tourists but are absolutely worth seeing? I recently spent two weeks in rural Slovenia and was blown away by the pristine lakes, mountain vistas, and charming villages without the crowds you\'d find in neighboring Italy or Austria. The local cuisine was incredible and accommodation costs were about half what you\'d pay in more popular European destinations. The locals were incredibly welcoming and many spoke enough English to make getting around easy.',
     image: '',
     upvotes: 1872,
     userId: 5,
@@ -677,8 +677,8 @@ export const posts = [
   {
     id: 5,
     title: 'Breakthrough in quantum computing announced today',
-    content: 'Scientists at MIT have achieved a major breakthrough in quantum computing, successfully maintaining quantum coherence for over 10 minutes, potentially revolutionizing the field.',
-    image: 'https://picsum.photos/800/400?random=5',
+    content: 'Scientists at MIT have achieved a major breakthrough in quantum computing, successfully maintaining quantum coherence for over 10 minutes, potentially revolutionizing the field. This is nearly 100 times longer than previous records and could make quantum computers practical for real-world applications. The team used a novel approach involving superconducting circuits isolated in a near-perfect vacuum at temperatures just a fraction above absolute zero. They also developed new error correction algorithms that could detect and fix quantum decoherence almost in real-time. The implications for cryptography, drug discovery, and complex systems modeling are enormous. The paper is available on the arXiv preprint server and has been submitted to Nature for peer review.',
+    image: '',
     upvotes: 5231,
     userId: 1,
     subredditId: 5,
@@ -688,7 +688,7 @@ export const posts = [
   {
     id: 6,
     title: 'What small thing instantly makes your day better?',
-    content: 'Just curious what little things can turn someone\'s day around for the better.',
+    content: 'Just curious what little things can turn someone\'s day around for the better. For me, it\'s when I make the perfect cup of coffee in the morning - right temperature, right strength, with just a touch of cinnamon. It sets the tone for the whole day. Another small joy is when my cat greets me at the door when I come home from work, meowing and purring like I\'ve been gone for years instead of hours. What small pleasures brighten your day?',
     image: '',
     upvotes: 9521,
     userId: 2,
@@ -699,7 +699,7 @@ export const posts = [
   {
     id: 7,
     title: 'Learning TypeScript - Is it worth it in 2023?',
-    content: 'I\'ve been using JavaScript for years and wondering if I should invest time in learning TypeScript. What are your experiences?',
+    content: 'I\'ve been using JavaScript for years and wondering if I should invest time in learning TypeScript. What are your experiences? I work primarily on front-end development with React, and I\'ve been managing fine with PropTypes and JSDoc comments for type hinting, but I\'m seeing more and more job listings requiring TypeScript experience. Has it significantly improved your code quality and reduced bugs? How steep was the learning curve? Did you face any major challenges when migrating existing projects? Any resources or courses you\'d recommend for someone making the transition?',
     image: '',
     upvotes: 782,
     userId: 3,
@@ -710,8 +710,8 @@ export const posts = [
   {
     id: 8,
     title: 'Top 10 upcoming indie games to watch out for',
-    content: 'After attending several gaming conventions, here are my top picks for upcoming indie games that deserve your attention.',
-    image: 'https://picsum.photos/800/400?random=8',
+    content: 'After attending several gaming conventions, here are my top picks for upcoming indie games that deserve your attention:\n\n1. "Hollow Echo" - A metroidvania with unique sound-based mechanics\n2. "Proxima Colony" - A colony sim set on a procedurally generated exoplanet\n3. "Chronos Divide" - A time-manipulation puzzle platformer with hand-drawn art\n4. "Orbital Decay" - A space station management sim with realistic physics\n5. "Verdant Whisper" - A narrative adventure in a sentient forest\n6. "Neon Cascade" - A cyberpunk roguelike with deck-building elements\n7. "Fractured Realms" - An isometric RPG with dimension-hopping mechanics\n8. "Sovereign Skies" - A sky-sailing adventure with trading and exploration\n9. "Quantum Nexus" - A puzzle game based on quantum mechanics principles\n10. "Astral Tides" - A gorgeous hand-painted action RPG with local co-op\n\nWhich ones sound interesting to you? Many of these titles have demos available on Steam or itch.io right now.',
+    image: '',
     upvotes: 3102,
     userId: 4,
     subredditId: 3,
